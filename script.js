@@ -416,4 +416,26 @@ document.addEventListener('DOMContentLoaded', function() {
         simulation.force("center", d3.forceCenter(newWidth / 2, newHeight / 2));
         simulation.alpha(0.3).restart();
     });
+
+});
+// 联系表单处理
+document.querySelector('.contact-form .btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if (!name || !email || !message) {
+        alert('请填写所有必填字段');
+        return;
+    }
+    
+    // 这里可以添加实际的表单提交逻辑
+    alert('消息发送成功！我会尽快回复您。');
+    
+    // 清空表单
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
 });
